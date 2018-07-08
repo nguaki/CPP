@@ -8,7 +8,7 @@
 //
 // Note that Queue has only one entry point which is the back and only one
 // exit point which is front.
-//
+// But Deque has 2 entry points and 2 exits points.
 //
 // OUTPUT
 //one
@@ -26,6 +26,9 @@
 //P
 //R
 //Z
+//
+// July 7, 2018                 What is important is the real world scenario where
+//                              deque is must to have.
 /////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <deque>

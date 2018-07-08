@@ -5,6 +5,10 @@
 //    Usage of these functions: push_back(), begin(), end(), sort(), reverse(),
 //                              front(), back().
 //
+// Note that list is not an array.
+// It is actually double linked list.
+// So inserting or erasing a record in the middle will be efficient than vector or list.
+//
 //Jesus
 //Christ
 //Abraham
