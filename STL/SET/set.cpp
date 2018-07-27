@@ -14,6 +14,8 @@
 //Other than that, I don't see much difference to 
 //vector.
 // 
+// July 8, 18   Tried auto and range for printing. remember to -std=c++11 when 
+//              compiling.
 ////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <set>
@@ -43,5 +45,14 @@ main()
     while( stIter != stNames.end()){
         cout << *stIter++ << "  ";
     }
+    cout << endl;
+    
+    auto it = stNames.begin();
+    while( it != stNames.end()) cout << *it++ << "  ";
+    cout << endl;
+    
+    for( auto &it : stNames ) cout << it << "   ";
+    cout << endl;
+    
     return 0;
 }

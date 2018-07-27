@@ -7,6 +7,15 @@
 //found                                                                                                                    
 //score: 100                                                                                                               
 //average score:82      
+//
+//Illustrates that map DS keeps in the ascending order of key.
+//
+//abc   79
+//matthew   100
+//xyz   80
+//yyy   70
+//
+//Jul 8,18   implemented auto printing.
 //////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
@@ -26,6 +35,9 @@ main()
     mpGrades["abc"] = 79;
     mpGrades["yyy"] = 70;
     
+    for( auto &it : mpGrades ){
+        cout << it.first << "   "  << it.second << endl;  //second refers to value.
+     }
     string sName;
     cout << "Enter name:";
     cin >> sName;
@@ -56,5 +68,13 @@ main()
     
     cout << "average score:" << (double)(iTotalScore/iCount) << endl;
 
+    iTotalScore = 0;
+    iCount = 0;
+    for( auto &it : mpGrades ){
+        iTotalScore += it.second;  //second refers to value.
+        iCount++;
+     }
+    
+    cout << "average score:" << (double)(iTotalScore/iCount) << endl;
     return 0;
 }
