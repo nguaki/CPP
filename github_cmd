@@ -1,0 +1,61 @@
+///////////////////////////////////////////////////////////////////////////////
+//Instruction to adding a new project to github
+
+git init
+
+//Add everything recursively to a local repository.
+git add .
+
+//Commit to the local repository.
+git commit -m "First commit"
+
+//Make sure there is a new project called C in github.
+git remote add origin https://github.com/nguaki/C
+git remote -v
+
+//This command is needed.
+git pull --rebase origin master
+
+//Now push to github.
+git push origin master
+
+///////////////////////////////////////////////////////////////////////////////
+Instruction to adding new files.
+git add ../../TEMPLATE/FUNCTION/weird_template.cpp
+git add ../../TEMPLATE/FUNCTION/value_template.cpp
+git add ../../TEMPLATE/FUNCTION/overload_gen_func.cpp
+git add ../../TEMPLATE/CLASS/template_stack.cpp
+git add ../../TEMPLATE/CLASS/specific_template_class.cpp
+git add ../../TEMPLATE/CLASS/another_gen_class.cpp
+git commit -m "moved to new directory"
+git push 
+ 
+Need to enter username and password to Github
+///////////////////////////////////////////////////////////////////////////////
+Instruction to deleting files.
+git rm ../../TEMPLATE/overload_gen_func.cpp
+git rm ../../TEMPLATE/specific_template_class.cpp
+git rm ../../TEMPLATE/template_stack.cpp
+git rm ../../TEMPLATE/value_template.cpp
+git remove -m "Removed to different directory"
+git commit -m "Removed to different directory"
+git push origin master
+
+Need to enter username and password to Github
+///////////////////////////////////////////////////////////////////////////////
+Instruction for checking in the latest change
+git status
+
+There will be 2 sections:modified section and new section.
+Move the mouse to the each line and choose 'add'.
+You will find a line something like
+git add abc.cpp
+
+
+After all of them are chosen:
+git commit -m "description"
+git push origin master
+Enter login name and password
+
+Goto github and validate the files have been checked in.
+///////////////////////////////////////////////////////////////////////////////
