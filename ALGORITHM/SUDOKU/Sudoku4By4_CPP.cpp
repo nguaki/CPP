@@ -1,4 +1,9 @@
+//Date: Aug 3, 2018
+//
 //Using CPP's reference variables, rather than pointers.
+//By including <cstdio> which is C++ version of C <stdio.h>
+//we can use bool type which makes my life so much easier.
+//
 //Compilation:  g++ Sudoku4By4_CPP.cpp
 
 #include <cstdio>
@@ -15,7 +20,7 @@ bool bMatrixIsComplete( int SUDOKU_MATRIX[N][N], int &iRow, int &iCol );
 
 bool bFillInUndefined(int SUDOKU_MATRIX[N][N]);
 
-short sSafeToAssign( int SUDOKU_MATRIX[N][N], int iRow, int iCol, int iNum );
+bool sSafeToAssign( int SUDOKU_MATRIX[N][N], int iRow, int iCol, int iNum );
 
 bool bCheckBoxIfNumAlreadyExists( int SUDOKU_MATRIX[N][N], int iRow, int iCol, int iNum );
 bool bCheckColumnIfNumAlreadyExists( int SUDOKU_MATRIX[N][N], int iCol, int iNum );
@@ -31,7 +36,7 @@ bFillInUndefined(int SUDOKU_MATRIX[N][N])
         
    for( iNum=1; iNum<=N; iNum++ )
    {
-       if( sSafeToAssign( SUDOKU_MATRIX, iRow, iCol, iNum ) == 1 )
+       if( bSafeToAssign( SUDOKU_MATRIX, iRow, iCol, iNum ) == true )
        {
            SUDOKU_MATRIX[iRow][iCol] = iNum;
            printf("In Progress\n");
@@ -116,8 +121,8 @@ bCheckBoxIfNumAlreadyExists( int SUDOKU_MATRIX[N][N], int iRow, int iCol, int iN
 
 //OUTPUT
 //   1 : Can assign 
-short 
-sSafeToAssign( int SUDOKU_MATRIX[N][N], int iRow, int iCol, int iNum )
+bool 
+bSafeToAssign( int SUDOKU_MATRIX[N][N], int iRow, int iCol, int iNum )
 {
     if( bCheckRowIfNumAlreadyExists( SUDOKU_MATRIX, iRow, iNum ) == true  ||
             bCheckColumnIfNumAlreadyExists( SUDOKU_MATRIX, iCol, iNum ) == true  ||

@@ -34,6 +34,7 @@ main(){
     samp *temp;
 
     //This looks weird from C point of view. But this is legit in C++.
+    //Calls the constructor 8 times.
     samp ob[4][2] = {
         1,2,
         3,4,
@@ -46,6 +47,6 @@ main(){
     cout << "size of temp = " << sizeof(temp) << endl;  // end up 8
     for(int i=0; i<8; i++){
         cout << temp->get_a() << endl;
-        temp++;
+        temp++;   //Increments to next object.
     }
 }

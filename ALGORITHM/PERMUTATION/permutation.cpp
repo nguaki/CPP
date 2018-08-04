@@ -41,6 +41,8 @@ main(void)
 {
 
     char str1[4] = "MAN";
+    //This part is very important.
+    //Note that it is very important to send out 1 less than strlen.
     vGetPermutation(str1, 0, strlen(str1)-1 );
     
     char str2[5] = "ABCD";
@@ -52,4 +54,5 @@ main(void)
     vGetPermutation(str3, 0, strlen(str3)-1 );
     
     return 0;
+}
 }

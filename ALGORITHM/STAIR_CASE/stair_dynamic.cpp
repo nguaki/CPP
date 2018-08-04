@@ -1,3 +1,9 @@
+//Dynamic program solution to recursive only solution. 
+//This reduces the number of calculation by storing already calculated numbers
+//into an array.
+//This method will save the time of execution dramatically.
+//Used to be O(2^^n). But now it is ??? Should be linear, not exponential.
+//Not sure what is actual O() notation for this method.
 #include <iostream>
 
 using namespace std;
