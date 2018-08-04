@@ -1,3 +1,9 @@
+//Aug 4, 2018
+//This is the complex part of the stair case algorithm.
+//Previously, only 1 step or 2 steps were allowed.
+//Now how about, {1,3,5} steps are allowed.
+//Inducing:  If 1 or 2 steps were S(n) = S(n-1) + S(n-2).
+//           This will be S(n-1) + S(n-3) + S(n-5)
 #include <iostream>
 
 using namespace std;
