@@ -1,4 +1,4 @@
-//
+//Now the root node has the maximum value.
 //Mimics Heap binary tree in a form of a vector.
 //Remember that the minimum heap tree is established when parent node is less than 
 //its children nodes.
@@ -15,17 +15,17 @@ void swap(int &x, int &y);
 
 
 // A class for Min Heap
-class MinHeap
+class MaxHeap
 {
     //int *harr; // pointer to array of elements in heap
     vector<int> harr;
     int heap_size; // size of min heap
 public:
     // Constructor
-    MinHeap(vector<int> &a, int size);
+    MaxHeap(vector<int> &a, int size);
  
     // to heapify a subtree with root at given index
-    void MinHeapify(int );
+    void MaxHeapify(int );
  
     // to get index of left child of node at index i
     int left(int i) { return (2*i + 1); }
@@ -34,18 +34,18 @@ public:
     int right(int i) { return (2*i + 2); }
  
     // to remove min (or root), add a new value x, and return old root
-    int replaceMin(int x);
+    int replaceMax(int x);
  
     // to extract the root which is the minimum element
-    int extractMin();
+    int extractMax();
 };
  
 
  
-// FOLLOWING ARE IMPLEMENTATIONS OF STANDARD MIN HEAP METHODS FROM CORMEN BOOK
+// FOLLOWING ARE IMPLEMENTATIONS OF STANDARD MIN HEAP METHODS FROM CMEN BOOK
 // Constructor: Builds a heap from a given array a[] of given size
 //MinHeap::MinHeap(int a[], int size)
-MinHeap::MinHeap(vector<int> &a, int size)
+MaxHeap::MaxHeap(vector<int> &a, int size)
 {
     heap_size = size;
     harr = a;  // store address of array
@@ -54,32 +54,32 @@ MinHeap::MinHeap(vector<int> &a, int size)
                                //goes to the root.
     while (i >= 0)
     {
-        MinHeapify(i);
+        MaxHeapify(i);
         i--;
     }
 }
  
 // Method to remove minimum element (or root) from min heap
 // Restore the Min heap by placing the lowest number at the root.
-int MinHeap::extractMin()
+int MaxHeap::extractMax()
 {
     int root = harr[0];
     if (heap_size > 1)
     {
         harr[0] = harr[heap_size-1]; //Question:Not sure why the last node is set to root???
         heap_size--;
-        MinHeapify(0);
+        MaxHeapify(0);
     }
     return root;
 }
  
 // Method to change root with given value x, and return the old root
-int MinHeap::replaceMin(int x)
+int MaxHeap::replaceMax(int x)
 {
     int root = harr[0];
     harr[0] = x;
-    if (root < x)
-        MinHeapify(0);
+    if (root > x)
+        MaxHeapify(0);
     return root;
 }
  
@@ -87,24 +87,23 @@ int MinHeap::replaceMin(int x)
 // This method assumes that the subtrees are already heapified
 //Since this is Minimum Heap using the Vector Data structure,
 //0th index must have the minimum number.
-void MinHeap::MinHeapify(int iIndex)
+void MaxHeap::MaxHeapify(int iIndex)
 {
     int LeftIndex = left(iIndex);
     int RightIndex = right(iIndex);
-    int smallestIndex = iIndex;
-    if (LeftIndex < heap_size && harr[LeftIndex] < harr[smallestIndex])
-        smallestIndex = LeftIndex;
-    if (RightIndex < heap_size && harr[RightIndex] < harr[smallestIndex])
-        smallestIndex = RightIndex;
-    if (smallestIndex!= iIndex)
+    int largestIndex = iIndex;
+    if (LeftIndex < heap_size && harr[LeftIndex] > harr[largestIndex])
+        largestIndex = LeftIndex;
+    if (RightIndex < heap_size && harr[RightIndex] > harr[largestIndex])
+        largestIndex = RightIndex;
+    if (largestIndex!= iIndex)
     {
-        //swap(&harr[iIndex], &harr[smallestIndex]);
-        swap(harr[iIndex], harr[smallestIndex]);
-        MinHeapify(smallestIndex);
+        swap(harr[largestIndex], harr[iIndex]);
+        MaxHeapify(largestIndex);
     }
 }
 
-vector<int> sortKMessedArray( const vector<int>& arr, int k ) 
+vector<int> sortKMessedArray( const vector<int>& arr, int k )
 {
     // your code goes here
     int n = arr.size();
@@ -118,7 +117,7 @@ vector<int> sortKMessedArray( const vector<int>& arr, int k )
        // harr[i] = arr[i];
         harr.push_back(arr[i]);
    
-    MinHeap hp(harr, k+1);//Why +1?
+    MaxHeap hp(harr, k+1);//Why +1?
     
     // i is index for remaining elements in arr[] and ti
     // is target index of for cuurent minimum element in
@@ -131,13 +130,13 @@ vector<int> sortKMessedArray( const vector<int>& arr, int k )
         if (i < n)
           //Push back the minimum from a b-tree.
           //Adjust the Min heap tree.
-          sorted_arr.push_back(hp.replaceMin(arr[i]));
+          sorted_arr.push_back(hp.replaceMax(arr[i]));
  
         // Otherwise place root at its target index and
         // reduce heap size
         else
             //Extract the minimum value and readjusts heap.
-            sorted_arr.push_back(hp.extractMin());
+            sorted_arr.push_back(hp.extractMax());
     }
 
   return sorted_arr;
@@ -165,7 +164,7 @@ void swap(int &x, int &y)
 int main()
 {
     int k = 2;
-    vector<int> vInt = {2, 6, 3, 12, 56, 8};
+    vector<int> vInt = {12, 56, 2, 6, 8, 3};
     vector<int> vAnswer;
     
     //int n = vInt.size();
