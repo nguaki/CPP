@@ -1,0 +1,6 @@
+Create BST in 4 ways:
+1. CreateNode function returns ROOT address
+2. CreateNode function doesn't return ROOT
+3. Use global variable
+4. Don't use recursive. use a loop.
+5. Test search.
