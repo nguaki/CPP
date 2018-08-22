@@ -1,3 +1,5 @@
+//Aug 17, 18
+//Inverse tree creation and search algorithm.
 #include <iostream>
 
 using namespace std;
@@ -14,7 +16,9 @@ struct NODE{
     NODE     *ptrRight;
 };
 
-NODE * ptrGenerateNode( INTERVAL stIT )
+//Generates a NODE and assign values.
+NODE * 
+ptrGenerateNode( INTERVAL stIT )
 {
     NODE *ptrNode = new NODE;
     
@@ -31,6 +35,8 @@ NODE * ptrGenerateNode( INTERVAL stIT )
     return ptrNode;
 }
 
+//Creates a BST.
+//Always returns root.
 NODE *
 ptrCreateTree( NODE *ptrNode, INTERVAL stINT )
 {

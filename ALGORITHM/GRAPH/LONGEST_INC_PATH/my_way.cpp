@@ -170,7 +170,7 @@ int dfs(vector<vector<int>>&matrix, int r, int c, int n_rows, int n_cols)
                         //Only if current cell is dead end.
                         if( bDeadEnd( curr_cell, matrix ) ){
                              dp[curr_cell] = 1 + iGetHighestDP(curr_cell, matrix);
-                             //iMax = dp[curr_cell];
+                             iMax = dp[curr_cell];
                              break;
                         }
                     }
