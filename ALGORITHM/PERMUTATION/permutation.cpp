@@ -1,4 +1,5 @@
-#include <iostream>
+//In statistics, getting permutation is simply 6!.
+//In order to get the #include <iostream>
 #include <cstring>
 
 using namespace std;
@@ -18,6 +19,7 @@ void
 vGetPermutation(char *str, int i, int N )
 {
     int j;
+    
     
     if( i == N )
     {

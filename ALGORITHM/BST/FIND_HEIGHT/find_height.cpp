@@ -1,8 +1,5 @@
 /////////////////////////////////////////////////////////////////
-//May 1, 18   Fixed preOrder(), postOrder() to call itself.
-//            This seemed to resolve the problem of incorrect
-//            trasversing.
-//Aug 7,18    Added more comments.
+//Aug 24, 18  Finding height of a tree recursively.
 //////////////////////////////////////////////////////////////////////
 #include <iostream>
 
@@ -53,6 +50,7 @@ NODE *insertBST( NODE *root, int data )
 //If the node is a leaf, this becomes the base line.
 //The height of the node is 0.  So it has to return -1 since the
 //function returns at least 1.
+//Although this looks simple, but there is a lot going on recursively.
 int
 iCalHeight( NODE *root )
 {
