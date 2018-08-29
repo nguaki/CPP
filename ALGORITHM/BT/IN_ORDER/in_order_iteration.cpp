@@ -1,3 +1,14 @@
+//Aug 26, 18
+//Visiting tree nodes inorder without recursion.
+//
+//  (A)Traverse left child until NULL and push each node onto stack.
+//  (B)Pop top node. Lets say X
+//  (C)Push right child of X onto stack.
+//
+// This requires the understanding of
+// 1) how inorder traverse in a tree ( Go left all the way.  print. Load a right child)
+// 2) understanding of how stack works.
+//
 #include <iostream>
 #include <stack>
 
@@ -45,6 +56,7 @@ inOrder_iteration(NODE* root)
     Sptr.push(ptrTemp);
     while( !Sptr.empty() )
     {
+        //Go all the way to the end of left childrens.
         while( ptrTemp->ptrLeft != NULL )
         {
             ptrTemp=ptrTemp->ptrLeft;
