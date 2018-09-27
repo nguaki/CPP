@@ -1,1 +1,2 @@
-Data that are stored unordered container are kept in hash table.
+map and unorder_map are same except map keeps the keys in ascending order
+while unorder_map does not keep in any order.

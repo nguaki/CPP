@@ -26,6 +26,7 @@ iLCS( string S1, string S2 )
         
     for (iRow=0; iRow<=iLength2; iRow++)
         M[iRow][0] = 0;
+        
     for (iRow=1; iRow<=iLength1; iRow++){
         for (iCol=1; iCol<=iLength2; iCol++){
             if(S1[iRow] == S2[iCol])

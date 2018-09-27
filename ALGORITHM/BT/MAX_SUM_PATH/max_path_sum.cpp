@@ -55,6 +55,9 @@ iFindPathSum(NODE* Node, int& iMaxPath )
    
    //Following line considers total path as the left and right and the node itself.
    //iMaxAtThisNode only considers the max from one path only.
+   //Need more illustration.
+   //This description contradicts the above statment:
+   //Clearly iMaxAtThisNode gets the max from both sides.
    iMaxFromBothSides = max(iMaxAtThisNode, iLeftPathSum+iRightPathSum+Node->iData);
    
    iMaxPath = max(iMaxFromBothSides, iMaxPath);

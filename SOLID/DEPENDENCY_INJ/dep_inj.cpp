@@ -11,6 +11,9 @@
 //
 //  Instead of using,  inject object B into class A.
 //  Here is the thing: Don't instantiate any object within class A.
+//  
+//  Sep 5,18  -  Here is a thing. Why would anyone instatiate an object
+//               within an object?
 //
 // OUTPUT:
 //Circle
@@ -34,6 +37,11 @@
 //   What is a big deal?  There is no code change needed for Drawing.
 //   All you need is to inject an address of an object which is derived from
 //   Shape object.
+//
+//   Sep 5, 2018  Here is another illustration of polymorphism where objects of
+//                different classes but same base class can be sent in as a pointer
+//                to a base class.
+//
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>

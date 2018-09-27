@@ -12,11 +12,15 @@
 //
 //
 //               [ Observer  ]
-//               [-Car       ]        <---------------------->  [Car               ]
-//                                                              [-vector<Observer*>]
+//               [-Car       ]        <>---------------------   [Car               ]
+//                       ^  
+//                       |                                      [-vector<Observer*>]                
+//         |-------------|-------------------|                  [update()          ]
 //   [LeftObserver] [CenterObserver] {RightObserver]
 //
+//    Note Car and Observer have composition relationshiop. (car has Observer)
 //    Note that both sides uses each other's objects.
+//    Note that Car is the broadcasting to all observers.
 //
 //I am left
 //I am left
@@ -56,6 +60,11 @@
 //         call Observer's derived object.  Again using polymorphism.
 //   (3) From each derived object, get the current Car's position
 //       by calling the getter.
+//
+// Sep 26, 2018           Subscriber and Broadcasting relationship.
+//                        When a stock price changes, it has to let all subscribers
+//                        know the change.
+//                        Subscriber should have the right to unscribe.
 //
 ////////////////////////////////////////////////////////////////////////////////
 #include <iostream>

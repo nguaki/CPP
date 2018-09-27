@@ -4,11 +4,14 @@
 // Demonstration of factory pattern
 //
 //
-//       [   Toy     ]           -------->  [ToyFactory]
+//       [Toy Interface]   <>------------   [ToyFactory]
+//             ^
+//    |--------|---------|
 //  [Car]   [Train]  [AirPlane]
 //
+//  Note:The derived classes not only inherits but implements.
 //
-//  Uses abstract class and derived by 3 classes.
+//  Uses interface(pure abstract class) and derived by 3 classes.
 //  From ToyFactory, it has a static function which instantiates a derived object.
 //  From main, a user chooses which toy to be created and calls the static function
 //  of ToyFactory.
@@ -29,6 +32,11 @@
 //Assemble Airplne.
 //Combine Airplne. 
 //4
+//
+// Sep 5, 18  -  Does it have to use static method?
+//               Why?  Need to experiment without using static method.
+//               I guess creating a class which generates different kind of
+//               objects is a big deal.
 ////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include "Factory.cpp"

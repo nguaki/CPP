@@ -9,8 +9,9 @@ struct INTERVAL{
     int iHigh;
 };
 
+//Node info now includes high and low.
 struct NODE{
-    INTERVAL *ptrINT;
+    INTERVAL *ptrINT; //I don't like this pointer.
     int      iMax;
     NODE     *ptrLeft;
     NODE     *ptrRight;
@@ -37,6 +38,7 @@ ptrGenerateNode( INTERVAL stIT )
 
 //Creates a BST.
 //Always returns root.
+//sort based on low key.
 NODE *
 ptrCreateTree( NODE *ptrNode, INTERVAL stINT )
 {
@@ -52,6 +54,7 @@ ptrCreateTree( NODE *ptrNode, INTERVAL stINT )
     else
         ptrNode->ptrRight = ptrCreateTree(ptrNode->ptrRight, stINT);
 
+    //keep track of max.
     if( stINT.iHigh > ptrNode->iMax )    
         ptrNode->iMax = stINT.iHigh;
         

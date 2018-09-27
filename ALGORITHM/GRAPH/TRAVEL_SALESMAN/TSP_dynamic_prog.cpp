@@ -66,6 +66,7 @@ int tsp(int dist[4][4])
             if(s.find(currVertex)!=s.end())  continue;
             
             //Intersting way to assign data.
+            //Index is of struct {int, set<int>};
             Index index={currVertex,s};
             
             int minCost=INT_MAX;

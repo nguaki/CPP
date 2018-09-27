@@ -2,7 +2,7 @@
 //July 7, 2018
 //Liskoff principle is an extension of OPEN_CLOSE principle.
 //
-//Here a new employee type of Contract has been addede.
+//Here a new employee type, Contract, has been added.
 //Notice that there is no logic changes needed.
 //
 //      [ IEmployee1 ]    [ IEmployee2    ]  
@@ -19,6 +19,10 @@
 //5000   
 //4000   
 //4000 
+// 
+// Sep 5, 18   -  The only difference between Liskoff and Open/Close is the usage of
+//                multiple interfaces to inherit.  The name of the game is: Don't touch
+//                existing code when new requirement is added.
 ////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <vector>
@@ -66,6 +70,7 @@ class Temp : public Employee{
 //New class has been added.
 //No code needs to change for the previous classes.
 //What is a big deal?  There is no need to test again.
+//Sep 5, 18  -  Note that this class inherits only one interface.
 class Contract : public IEmployee2{
 	int    _id;
 	string _sName;

@@ -4,19 +4,24 @@
 //It stores the data from the beginning.
 #include <iostream>
 #include <cstdio>
+#include <cassert>
+#include <algorithm>
 
 using namespace std;
 
-long
-fib( long *iaN,  int N )
+unsigned long long
+fib( unsigned long long *iaN,  int N )
 {
 
-    int iR, i; 
+    int  i; 
     
+   iaN[0] = 1;
    iaN[1] = 1;
-   iaN[2] = 1;
-   
-    for( i = 3; i<=N; i++ ) 
+  
+   if(N==0||N==1) 
+        return 1;
+        
+   for( i = 2; i<=N; i++ ) 
         iaN[i] = iaN[i-2] + iaN[i-1];
    
     return iaN[N]; 
@@ -26,25 +31,26 @@ fib( long *iaN,  int N )
 int
 main(void)
 {
-    long *ip = new long[5+1];
+    unsigned long long ip[100];
+
+    fill( ip, ip+99, 0);
+    assert(fib(ip,0)==1);
+    assert(fib(ip,1)==1);
+    assert(fib(ip,2)==2);
+    assert(fib(ip,3)==3);
+    assert(fib(ip,4)==5);
+    assert(fib(ip,5)==8);
+    assert(fib(ip,6)==13);
+    assert(fib(ip,7)==21);
 
     cout << "fib of 5 is " << fib( ip, 5) << endl;  
-    delete ip;
     
-    ip = new long[35+1];
     cout << "fib of 35 is " << fib( ip, 35) << endl;  
-    delete ip;
     
-    ip = new long[50+1];
     cout << "fib of 50 is " << fib( ip, 50) << endl;  
-    delete ip;
+    cout << "fib of 98 is " << fib( ip, 98) << endl;  
     
-    ip = new long[100+1];
     cout << "fib of 100 is " << fib( ip, 100) << endl;  
-    delete ip;
     
-    ip = new long[1000+1];
-    cout << "fib of 100 is " << fib( ip, 1000) << endl;  
-    delete ip;
     return 0;
 }

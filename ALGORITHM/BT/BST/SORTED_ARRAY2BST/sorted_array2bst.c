@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////
 //Aug 25, 2018
-//Find the leftmost and rightmost nodes of a tree.
+//Convert sorted array to bst.
 //////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <queue>
@@ -26,12 +26,6 @@ ptrGenerateNode( int iD )
     return ptrTemp;
 }
 
-//Generate a BST tree from a sorted integer.
-//Magically returns the root node.
-//All the left and right chils are connected.
-//Meticulous recursive tracing  is absolutely essential.
-//Notice there is no root node to be sent from the main.
-//This one sends the root node address.
 NODE *
 insertBST( int iBeginIndex, int iEndIndex, int* iArray )
 {

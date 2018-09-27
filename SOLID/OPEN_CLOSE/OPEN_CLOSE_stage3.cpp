@@ -1,3 +1,6 @@
+//Sep 5, 2018  -  This is truly a beauty of OO.
+//                setting up such that a new requirement won't alter any
+//                existing code.
 #include <iostream>
 #include <vector>
 

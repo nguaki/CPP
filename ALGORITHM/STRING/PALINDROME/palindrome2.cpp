@@ -12,6 +12,12 @@ bool
 //Note that the reference will fail compiling since there is no
 //object in the memory.
 //bCheckPalindrome( string &s )
+//
+//This is 50% clever since it can run 50% faster.
+//How does it work?
+// (s.begin(), s.begin()/2  will compare only the half string.
+// s.rbegin() will start another string from the reverse.
+// Just need to get used to the function call.
 //////////////////////////////////////////////////////////////////
 bCheckPalindrome( string s )
 {

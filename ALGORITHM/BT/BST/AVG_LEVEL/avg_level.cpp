@@ -24,15 +24,6 @@ ptrGenerateNode( int iD )
     ptrTemp->left = ptrTemp->right = NULL;
     
 }
-//Aug 7, 2018
-//In order this program to work, this function must
-//return same address of root.
-//Tough hurdle to tracing recursive function is that
-//each stack frame has different set of variables and its
-//values.
-//The argument root is misleading. When this is called for the 
-//first time in the cycle of recursion, root really means the root.
-//Howeve
 NODE *insertBST( NODE *root, int data )
 {
     //NODE *temp;

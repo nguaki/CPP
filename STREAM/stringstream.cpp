@@ -7,7 +7,9 @@
 //
 // Utilizes str() method.
 //
-// 
+// Sep 5, 18   -  With sstring,  concatenation between a number and  a string 
+//                is possible.
+//
 ////////////////////////////////////////////////////////////////////////////////
     #include <iostream>
     #include <sstream>

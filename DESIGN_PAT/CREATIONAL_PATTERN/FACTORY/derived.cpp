@@ -1,5 +1,9 @@
+//Sep 26, 2018
+//"is a" relationship
+//Car      is a toy.
+//Train    is a toy.
+//Airplane is a toy.
 #include <iostream>
-
 using namespace std;
 
 class Toy{

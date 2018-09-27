@@ -34,7 +34,7 @@ vTopSortRecursive( GRAPH* pG, int iVertexID, bool *bVisited, stack<int>& stResul
             vTopSortRecursive( pG, it, bVisited, stResult );
    }
 
-    //Pushes the vertex ID after all its children adjacent vertices are already pushed.
+    //Pushes the vertex ID after all its children adjacent vertices are visited.
     stResult.push(iVertexID);
 }
 
